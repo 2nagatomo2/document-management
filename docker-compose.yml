@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: docmanager-postgres
+    environment:
+      POSTGRES_DB: docmanager
+      POSTGRES_USER: docmanager
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./docker/postgres/init:/docker-entrypoint-initdb.d
+    networks:
+      - docmanager-network
+
+  minio:
+    image: minio/minio:latest
+    container_name: docmanager-minio
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - minio_data:/data
+    command: server /data --console-address ":9001"
+    networks:
+      - docmanager-network
+
+  elasticmq:
+    image: softwaremill/elasticmq-native:latest
+    container_name: docmanager-elasticmq
+    ports:
+      - "9324:9324"
+      - "9325:9325"
+    volumes:
+      - ./docker/elasticmq/elasticmq.conf:/opt/elasticmq.conf
+    networks:
+      - docmanager-network
+
+volumes:
+  postgres_data:
+  minio_data:
+
+networks:
+  docmanager-network:
+    driver: bridge

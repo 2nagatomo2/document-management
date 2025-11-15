@@ -79,6 +79,7 @@
 ## 6. 開発環境
 
 - バックエンド: Spring Boot, Java 17, Gradle
+- テストフレームワーク: JUnit 5, Spock Framework (Groovy)
 - フロントエンド: React 18, TypeScript
 - DB: PostgreSQL + Flyway
 - ストレージ: MinIO (ローカル開発時)

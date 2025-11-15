@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.docmanager.service.AuthServiceSpec" tests="6" skipped="0" failures="0" errors="0" timestamp="2025-11-15T09:10:04.398Z" hostname="kazuoki.local" time="0.046">
+  <properties/>
+  <testcase name="registerUser should successfully create a new user" classname="com.example.docmanager.service.AuthServiceSpec" time="0.024"/>
+  <testcase name="registerUser should throw exception when email already exists" classname="com.example.docmanager.service.AuthServiceSpec" time="0.006"/>
+  <testcase name="registerUser should throw exception when username already exists" classname="com.example.docmanager.service.AuthServiceSpec" time="0.003"/>
+  <testcase name="authenticateUser should return JWT token on successful authentication" classname="com.example.docmanager.service.AuthServiceSpec" time="0.008"/>
+  <testcase name="getCurrentUser should return user info when user exists" classname="com.example.docmanager.service.AuthServiceSpec" time="0.001"/>
+  <testcase name="getCurrentUser should throw exception when user not found" classname="com.example.docmanager.service.AuthServiceSpec" time="0.001"/>
+  <system-out><![CDATA[18:10:04.417 [Test worker] INFO com.example.docmanager.service.AuthService -- Registering new user with email: test@example.com
+18:10:04.421 [Test worker] INFO com.example.docmanager.service.AuthService -- User registered successfully with email: test@example.com
+18:10:04.425 [Test worker] INFO com.example.docmanager.service.AuthService -- Registering new user with email: existing@example.com
+18:10:04.431 [Test worker] INFO com.example.docmanager.service.AuthService -- Registering new user with email: new@example.com
+18:10:04.438 [Test worker] INFO com.example.docmanager.service.AuthService -- Authenticating user with email: test@example.com
+18:10:04.440 [Test worker] INFO com.example.docmanager.service.AuthService -- User authenticated successfully with email: test@example.com
+18:10:04.442 [Test worker] INFO com.example.docmanager.service.AuthService -- Getting current user info for email: test@example.com
+18:10:04.443 [Test worker] INFO com.example.docmanager.service.AuthService -- Getting current user info for email: nonexistent@example.com
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: document-management
+  
+  datasource:
+    url: jdbc:postgresql://localhost:5432/docmanager
+    username: docmanager
+    password: password
+    driver-class-name: org.postgresql.Driver
+  
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+  
+  jackson:
+    time-zone: UTC
+    serialization:
+      write-dates-as-timestamps: false
+
+# JWT settings
+jwt:
+  secret: mySecretKey123456789012345678901234567890
+  expiration: 86400000 # 24 hours in milliseconds
+
+# Logging
+logging:
+  level:
+    com.example.docmanager: DEBUG
+    org.seasar.doma: DEBUG
+    org.springframework.security: DEBUG
