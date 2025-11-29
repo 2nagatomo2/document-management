@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 
 services:
   postgres:
@@ -39,6 +39,17 @@ services:
       - "9325:9325"
     volumes:
       - ./docker/elasticmq/elasticmq.conf:/opt/elasticmq.conf
+    networks:
+      - docmanager-network
+  minio-init:
+    image: minio/mc:latest
+    container_name: docmanager-minio-init
+    depends_on:
+      - minio
+    volumes:
+      - ./docker/minio/init-buckets.sh:/app/init-buckets.sh
+    entrypoint: /bin/bash
+    command: -c /app/init-buckets.sh
     networks:
       - docmanager-network
 
