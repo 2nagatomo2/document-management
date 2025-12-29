@@ -1,8 +1,0 @@
-€18:10:04.417 [Test worker] INFO com.example.docmanager.service.AuthService -- Registering new user with email: test@example.com
-ˆ18:10:04.421 [Test worker] INFO com.example.docmanager.service.AuthService -- User registered successfully with email: test@example.com
-„18:10:04.425 [Test worker] INFO com.example.docmanager.service.AuthService -- Registering new user with email: existing@example.com
-18:10:04.431 [Test worker] INFO com.example.docmanager.service.AuthService -- Registering new user with email: new@example.com
-18:10:04.438 [Test worker] INFO com.example.docmanager.service.AuthService -- Authenticating user with email: test@example.com
-‹18:10:04.440 [Test worker] INFO com.example.docmanager.service.AuthService -- User authenticated successfully with email: test@example.com
-„18:10:04.442 [Test worker] INFO com.example.docmanager.service.AuthService -- Getting current user info for email: test@example.com
-‹18:10:04.443 [Test worker] INFO com.example.docmanager.service.AuthService -- Getting current user info for email: nonexistent@example.com
