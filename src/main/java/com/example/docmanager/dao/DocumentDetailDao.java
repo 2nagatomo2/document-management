@@ -5,10 +5,12 @@ import java.util.Optional;
 
 import org.seasar.doma.Dao;
 import org.seasar.doma.Select;
+import org.seasar.doma.boot.ConfigAutowireable;
 
 import com.example.docmanager.model.DocumentDetailModel;
 
 @Dao
+@ConfigAutowireable
 public interface DocumentDetailDao {
     
     @Select
